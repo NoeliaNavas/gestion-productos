@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, } from '@angular/common';
 import { Component, signal } from '@angular/core';
 import { ProductService,Product } from './services/product';
-
+import { ProductsList } from './components/products-list/products-list';
 @Component({
   selector: 'app-root',
-  imports: [CommonModule],
+  imports: [CommonModule, ProductsList],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
