@@ -2,14 +2,11 @@
 
 <ul class="list-group">
   @for (product of productos; track product._id) {
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-      <span>
-        <strong>{{ product.name }}</strong>  
-        <span class="text-muted">({{ product.category }})</span>
-      </span>
-
-      <span class="fw-bold text-primary">{{ product.price }} €</span>
-    </li>
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+    <app-product-card
+        [product]="product">
+    </app-product-card>
+</div>
   }
 
   @empty {
