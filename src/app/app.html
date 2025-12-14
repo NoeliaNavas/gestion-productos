@@ -12,6 +12,10 @@
 
 <!-- CONTENIDO PRINCIPAL -->
 <main class="container mb-5">
+  <app-product-form
+    (productoCreado)="onProductoCreado($event)">
+  </app-product-form>
+
   <app-products-list></app-products-list>
 </main>
 
