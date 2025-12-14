@@ -1,17 +1,22 @@
-<h2 class="fw-semibold mb-3">Listado de Productos</h2>
+<h2 class="fw-bold mb-4 text-center text-primary">
+   Listado de Productos
+</h2>
 
-<ul class="list-group">
+<div class="row g-4">
   @for (product of productos; track product._id) {
     <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-    <app-product-card
+      <app-product-card
         [product]="product">
-    </app-product-card>
-</div>
+      </app-product-card>
+    </div>
   }
 
   @empty {
-    <li class="list-group-item text-muted">
-      No hay productos para mostrar…
-    </li>
+    <div class="col-12">
+      <div class="alert alert-info text-center">
+        No hay productos para mostrar
+      </div>
+    </div>
   }
-</ul>
+</div>
+

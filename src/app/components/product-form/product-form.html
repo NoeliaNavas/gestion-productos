@@ -1,43 +1,74 @@
-<div class="card p-4 shadow-sm">
+<div>
 
-  <h4 class="mb-3 fw-semibold">Añadir Producto</h4>
+  <div class="d-flex justify-content-end mb-3">
+  <button
+    class="btn btn-outline-dark"
+    data-bs-toggle="collapse"
+    data-bs-target="#formProducto">
 
-  <form [formGroup]="formulario" (ngSubmit)="enviar()">
+    ➕ Añadir producto
+  </button>
+<div class="collapse" id="formProducto">
 
-    <div class="mb-3">
-      <label class="form-label">Nombre</label>
-      <input class="form-control" formControlName="name">
+  <div class="card shadow-sm border-0 rounded-4">
+
+    <div class="card-header bg-light border-bottom">
+      <h6 class="mb-0 fw-bold text-dark">
+        Nuevo producto
+      </h6>
     </div>
 
-    <div class="mb-3">
-      <label class="form-label">Descripción</label>
-      <textarea class="form-control" rows="2" formControlName="description"></textarea>
+    <div class="card-body p-4">
+
+      <form [formGroup]="formulario" (ngSubmit)="enviar()">
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Nombre</label>
+          <input class="form-control" formControlName="name">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Descripción</label>
+          <textarea class="form-control" rows="2" formControlName="description"></textarea>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label fw-semibold">Precio (€)</label>
+            <input type="number" class="form-control" formControlName="price">
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label fw-semibold">Categoría</label>
+            <input class="form-control" formControlName="category">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Imagen (URL)</label>
+          <input class="form-control" formControlName="image">
+        </div>
+
+        <div class="form-check form-switch mb-4">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            formControlName="active"
+            id="activoCheck">
+          <label class="form-check-label" for="activoCheck">
+            Producto activo
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-dark w-100">
+          Guardar producto
+        </button>
+
+      </form>
+
     </div>
-
-    <div class="mb-3">
-      <label class="form-label">Precio</label>
-      <input type="number" class="form-control" formControlName="price">
-    </div>
-
-    <div class="mb-3">
-      <label class="form-label">Categoría</label>
-      <input class="form-control" formControlName="category">
-    </div>
-
-    <div class="mb-3">
-      <label class="form-label">URL Imagen</label>
-      <input class="form-control" formControlName="image">
-    </div>
-
-    <div class="form-check mb-3">
-      <input type="checkbox" class="form-check-input" formControlName="active" id="activoCheck">
-      <label for="activoCheck" class="form-check-label">Activo</label>
-    </div>
-
-    <button type="submit" class="btn btn-primary w-100">
-      Crear producto
-    </button>
-
-  </form>
+  </div>
 
 </div>
+</div>
+
